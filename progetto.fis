@@ -13,19 +13,20 @@ DefuzzMethod='centroid'
 
 [Input1]
 Name='Temperatura (°C)'
-Range=[0 1]
+Range=[-10 40]
 NumMFs=3
-MF1='bassa':'trimf',[-0.416666666666667 0 0.416666666666667]
-MF2='media':'trimf',[0.0833333333333333 0.5 0.916666666666667]
-MF3='alta':'trimf',[0.583333333333333 1 1.41666666666667]
+MF1='bassa':'gaussmf',[10 -10]
+MF2='media':'gaussmf',[5 15]
+MF3='alta':'gaussmf',[10 40]
 
 [Input2]
 Name='Altitudine oggetto (°)'
-Range=[0 1]
-NumMFs=3
-MF1='bassa(10°-35°)':'trimf',[-0.416666666666667 0 0.416666666666667]
-MF2='media(35°-60°)':'trimf',[0.0833333333333333 0.5 0.916666666666667]
-MF3='mf3':'trimf',[0.583333333333333 1 1.41666666666667]
+Range=[0 90]
+NumMFs=4
+MF1='bassa (10°- 35°)':'trimf',[10 22.5 35]
+MF2='media (35°- 60°)':'trimf',[20 42.5 65]
+MF3='alta (60° - 90°)':'trimf',[50 90 90]
+MF4='bassissima (0° - 10°)':'trimf',[0 0 15]
 
 [Input3]
 Name='Inquinamento luminoso (scala Bortle)'
@@ -37,26 +38,28 @@ MF3='mf3':'trimf',[0 0.5 1]
 
 [Input4]
 Name='Altitudine del fotografo (m)'
-Range=[0 1]
-NumMFs=2
-MF1='mf1':'trimf',[0 0.5 1]
-MF2='mf2':'trimf',[0 0.5 1]
+Range=[0 4000]
+NumMFs=3
+MF1='Peggiore':'trimf',[0 190 500]
+MF2='Buona':'trimf',[230 1070 2470]
+MF3='Ottima':'trapmf',[1500 2556 4000 4000]
 
 [Input5]
 Name='Turbolenza atmosferica (m/s)'
-Range=[0 1]
+Range=[0 15]
 NumMFs=3
-MF1='bassa':'trimf',[0 0.5 1]
-MF2='media':'trimf',[0 0.5 1]
-MF3='alta':'trimf',[0 0.5 1]
+MF1='bassa':'trapmf',[0 0 2 5]
+MF2='media':'trimf',[3 6.5 10]
+MF3='alta':'trapmf',[7 11 15 15]
 
 [Output1]
 Name='Condizioni di scatto '
-Range=[0 1]
-NumMFs=3
-MF1='mf1':'trimf',[-0.416666666666667 0 0.416666666666667]
-MF2='mf2':'trimf',[0.0833333333333333 0.5 0.916666666666667]
-MF3='mf3':'trimf',[0.583333333333333 1 1.41666666666667]
+Range=[0 100]
+NumMFs=4
+MF1='Scarsa':'trimf',[0 12 30]
+MF2='Buona':'trimf',[20 33 50]
+MF3='Media':'trimf',[40 53 70]
+MF4='Ottima':'trimf',[60 83 100]
 
 [Rules]
 1 1 0 0 0, 1 (1) : 1
