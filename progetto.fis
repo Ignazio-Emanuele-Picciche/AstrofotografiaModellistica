@@ -4,7 +4,7 @@ Type='mamdani'
 Version=2.0
 NumInputs=5
 NumOutputs=1
-NumRules=9
+NumRules=11
 AndMethod='min'
 OrMethod='max'
 ImpMethod='min'
@@ -26,7 +26,7 @@ NumMFs=4
 MF1='bassa (10°- 35°)':'trimf',[10 22.5 35]
 MF2='media (35°- 60°)':'trimf',[20 42.5 65]
 MF3='alta (60° - 90°)':'trimf',[50 90 90]
-MF4='bassissima (0° - 10°)':'trimf',[0 0 15]
+MF4='bassissima (0° - 10°)':'trapmf',[0 0 10 13.5]
 
 [Input3]
 Name='Inquinamento luminoso (scala Bortle)'
@@ -62,12 +62,14 @@ MF3='Media':'trimf',[40 53 70]
 MF4='Ottima':'trimf',[60 83 100]
 
 [Rules]
-1 1 0 0 0, 1 (1) : 1
-2 1 0 0 0, 1 (1) : 1
-3 1 0 0 0, 1 (1) : 1
-1 2 0 0 0, 1 (1) : 1
-2 2 0 0 0, 1 (1) : 1
-3 2 0 0 0, 1 (1) : 1
-1 3 0 0 0, 1 (1) : 1
-2 3 0 0 0, 1 (1) : 1
-3 3 0 0 0, 1 (1) : 1
+1 1 0 0 0, 1 (0) : 1
+2 1 0 0 0, 1 (0) : 1
+3 1 0 0 0, 1 (0) : 1
+1 2 0 0 0, 1 (0) : 1
+2 2 0 0 0, 1 (0) : 1
+3 2 0 0 0, 1 (0) : 1
+1 3 0 0 0, 1 (0) : 1
+2 3 0 0 0, 1 (0) : 1
+3 3 0 0 0, 1 (0) : 1
+1 0 0 0 0, 1 (0) : 1
+0 4 0 0 0, 1 (1) : 1
