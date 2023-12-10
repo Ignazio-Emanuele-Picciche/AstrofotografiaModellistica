@@ -40,8 +40,8 @@ Name='Altitudine del fotografo (m)'
 Range=[0 4000]
 NumMFs=3
 MF1='Bassa':'gaussmf',[556.610277752364 0]
-MF2='Media':'trimf',[750 1599.07478797224 2500]
-MF3='Alta':'gaussmf',[750 4000]
+MF2='Media':'trimf',[815 1660 2669.2367000771]
+MF3='Alta':'gaussmf',[818 4000]
 
 [Input5]
 Name='Turbolenza atmosferica (m/s)'
